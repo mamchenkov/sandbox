@@ -24,7 +24,7 @@
 		<exec command="git tag -a ${tag.name} -m 'Tagging project [${phing.project.tag}] version [${tag.name}]'" />
 
 		<!-- Maybe this should be a separate target -->
-		<exec command="git push --tags" />
+		<exec command="git push origin --tags" />
 	</target>
 
 </project>
