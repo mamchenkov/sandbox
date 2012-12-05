@@ -17,3 +17,7 @@ Look at phing targets:
 ```
 $ phing -l
 ```
+
+AUTHOR
+------
+Leonid Mamchenkov
