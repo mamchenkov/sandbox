@@ -10,9 +10,9 @@
 	</target>
 
 	<!-- ========================================== -->
-	<!-- Target: git-tag                            -->
+	<!-- Target: version-create                     -->
 	<!-- ========================================== -->
-	<target name="git-tag">
+	<target name="version-create">
 		<echo msg="Creating git tag" />
 
 		<tstamp>
@@ -20,26 +20,45 @@
 		</tstamp>
 		<property name="tag.name" value="${phing.project.name}-${tag.date}" override="yes" />
 
-		<echo msg="Tag name: ${tag.name}" />
+		<echo msg="Version name: ${tag.name}" />
 		<exec command="git tag -a ${tag.name} -m 'Tagging project [${phing.project.name}] version [${tag.name}]'" />
 	</target>
 
 	<!-- ========================================== -->
-	<!-- Target: git-push                           -->
+	<!-- Target: version-push                       -->
 	<!-- ========================================== -->
-	<target name="git-push">
+	<target name="version-push">
 		<echo msg="Pushing to remote git repository" />
 
 		<exec command="git push --tags" />
 	</target>
 
 	<!-- ========================================== -->
-	<!-- Target: git-fetch                          -->
+	<!-- Target: version-pull                       -->
 	<!-- ========================================== -->
-	<target name="git-fetch">
+	<target name="version-pull">
 		<echo msg="Fetching from remote git repository" />
 
 		<exec command="git fetch --tags" />
+	</target>
+
+	<!-- ========================================== -->
+	<!-- Target: version-list                       -->
+	<!-- ========================================== -->
+	<target name="version-list">
+		<echo msg="Listing version" />
+
+		<exec command="git tag -l" logoutput="true" />
+	</target>
+
+	<!-- ========================================== -->
+	<!-- Target: version-checkout                   -->
+	<!-- ========================================== -->
+	<target name="version-checkout">
+		<echo msg="Checking out version" />
+
+		<exec command="git tag -l | sort -r | head -1" logoutput="true" outputProperty="tag.name" />
+		<echo msg="Version name: ${tag.name}" />
 	</target>
 
 </project>
