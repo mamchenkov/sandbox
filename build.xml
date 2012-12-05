@@ -41,7 +41,7 @@
 	<target name="version-list">
 		<echo msg="Listing version" />
 
-		<exec command="git tag -l" logoutput="true" />
+		<exec command="git tag -l '${phing.project.name}-*'" logoutput="true" />
 	</target>
 
 	<!-- ========================================== -->
@@ -50,7 +50,7 @@
 	<target name="version-checkout">
 		<echo msg="Checking out version" />
 
-		<exec command="git tag -l | sort -r | head -1" logoutput="true" outputProperty="tag.name" />
+		<exec command="git tag -l '${phing.project.name}-*' | sort -r | head -1" logoutput="true" outputProperty="tag.name" />
 		<echo msg="Version name: ${tag.name}" />
 	</target>
 
