@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="PhingBuild" default="hello">
-
-	<!-- ========================================== -->
-	<!-- Target: hello (default)                    -->
-	<!-- ========================================== -->
-	<target name="hello">
-		<echo msg="Hello world" />
-	</target>
+<project name="PhingBuild" default="version-list">
 
 	<!-- ========================================== -->
 	<!-- Target: version-create                     -->
@@ -43,7 +36,7 @@
 	</target>
 
 	<!-- ========================================== -->
-	<!-- Target: version-list                       -->
+	<!-- Target: version-list (default)             -->
 	<!-- ========================================== -->
 	<target name="version-list">
 		<echo msg="Listing version" />
