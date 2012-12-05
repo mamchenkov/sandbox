@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="PhingBuild" default="version-list">
+<project name="PhingVersion" default="version-list">
 
 	<!-- ========================================== -->
 	<!-- Target: version-create                     -->
