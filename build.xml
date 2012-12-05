@@ -52,6 +52,7 @@
 
 		<exec command="git tag -l '${phing.project.name}-*' | sort -r | head -1" logoutput="true" outputProperty="tag.name" />
 		<echo msg="Version name: ${tag.name}" />
+		<exec command="git checkout ${tag.name}" />
 	</target>
 
 </project>
