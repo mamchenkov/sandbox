@@ -50,7 +50,13 @@
 	<target name="version-checkout">
 		<echo msg="Checking out version" />
 
-		<exec command="git tag -l '${phing.project.name}-*' | sort -r | head -1" logoutput="true" outputProperty="tag.name" />
+		<if>
+			<not><isset property="tag.name" /></not>
+			<then>
+				<exec command="git tag -l '${phing.project.name}-*' | sort -r | head -1" logoutput="true" outputProperty="tag.name" />
+			</then>
+		</if>
+
 		<echo msg="Version name: ${tag.name}" />
 		<exec command="git checkout ${tag.name}" />
 		<exec command="echo ${tag.name} > version.txt" />

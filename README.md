@@ -30,9 +30,11 @@ $ phing -l
 NOTES
 -----
 
-When doing 'phing version-checkout', the latest available version will be used.  Also, a file called version.txt will be created,
-which will hold the name of the checked out version.  This file should be added to .gitignore .  This file is used for building
-deployment logs and diff changelogs before or after release.
+When doing 'phing version-checkout', the latest available version will be used. You can specify which version to check out
+by using the command: 'phing version-checkout -Dtag.name=some-version', where 'some-version' is the name of the tag to use.
+
+Also, a file called version.txt will be created, which will hold the name of the checked out version.  This file should be 
+added to .gitignore .  This file is used for building deployment logs and diff changelogs before or after release.
 
 
 AUTHOR
