@@ -12,7 +12,7 @@ BRANCHES
 USAGE
 -----
 
-Try starting with:
+Look at phing targets:
 
 ```
 $ phing -l
