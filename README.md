@@ -20,4 +20,4 @@ $ phing -l
 
 AUTHOR
 ------
-Leonid Mamchenkov
+Leonid Mamchenkov <leonid@mamchenkov.net>
